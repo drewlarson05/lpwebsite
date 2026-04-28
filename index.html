@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nostalgix Ketchup</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #CF2A27;
+      --secondary: #19323C;
+      --background: #fff8f3;
+      --accent: #F8E16C;
+      --radius: 10px;
+      --shadow: 0 4px 24px rgba(31,41,55,0.06);
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      background: var(--background);
+      color: var(--secondary);
+      line-height: 1.6;
+    }
+    header {
+      background: var(--primary);
+      color: #fff;
+      padding: 48px 0 56px 0;
+      text-align: center;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+    header img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #fff;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 12px rgba(31,41,55,0.1);
+      object-fit: contain;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: -2px;
+    }
+    header p {
+      font-size: 1.25rem;
+      margin-top: 10px;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    section {
+      margin: 0 auto;
+      max-width: 1024px;
+      padding: 56px 24px;
+    }
+    .features, .benefits {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+      margin-bottom: 32px;
+    }
+    .feature, .benefit {
+      background: #fff;
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      flex: 1 1 220px;
+      min-width: 220px;
+      max-width: 340px;
+      text-align: center;
+    }
+    .feature h3, .benefit h3 {
+      color: var(--primary);
+      margin-bottom: 12px;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+    .testimonials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+      margin-bottom: 32px;
+    }
+    .testimonial {
+      background: #fff;
+      padding: 24px 20px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      flex: 1 1 250px;
+      min-width: 220px;
+      max-width: 350px;
+      font-style: italic;
+      position: relative;
+    }
+    .testimonial:before {
+      content: '“';
+      font-size: 2.6rem;
+      color: var(--accent);
+      position: absolute;
+      left: 18px;
+      top: 5px;
+      font-family: serif;
+    }
+    .testimonial-footer {
+      font-style: normal;
+      font-weight: 700;
+      margin-top: 14px;
+      color: var(--secondary);
+      font-size: 1rem;
+    }
+    .pricing {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+      margin-bottom: 32px;
+    }
+    .price-card {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 36px 28px;
+      min-width: 250px;
+      max-width: 320px;
+      text-align: center;
+      border-top: 5px solid var(--primary);
+      flex: 1 1 250px;
+    }
+    .price-card h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+    .price-card .price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--secondary);
+      margin-bottom: 10px;
+    }
+    .price-card ul {
+      list-style: none;
+      text-align: left;
+      margin: 22px 0 14px 0;
+    }
+    .price-card ul li {
+      padding: 3px 0;
+    }
+    .price-card button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 12px 32px;
+      border-radius: 22px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background 0.18s;
+    }
+    .price-card button:hover {
+      background: #960101;
+    }
+    .contact-section {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      max-width: 600px;
+      margin: 0 auto 56px auto;
+      padding: 40px 30px 36px 30px;
+    }
+    .contact-section h2 {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 1.45rem;
+      margin-bottom: 22px;
+      text-align: center;
+    }
+    form#leadform {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    input[type="text"], input[type="email"], textarea {
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      font-size: 1rem;
+      background: #f9f9f9;
+    }
+    textarea {
+      height: 92px;
+      resize: vertical;
+    }
+    button[type="submit"] {
+      padding: 12px 0;
+      border: none;
+      border-radius: 22px;
+      background: var(--primary);
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.18s;
+      margin-top: 6px;
+    }
+    button[type="submit"]:hover {
+      background: #bd1e1a;
+    }
+    @media (max-width: 780px) {
+      .features, .benefits, .testimonials, .pricing {
+        flex-direction: column;
+        gap: 18px;
+      }
+      section {
+        padding: 40px 12px;
+      }
+      .contact-section {
+        padding: 28px 8px 20px 8px;
+      }
+    }
+    footer {
+      text-align: center;
+      padding: 24px 0 16px 0;
+      font-size: 0.95rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Your Brand">
+    <h1>Nostalgix Ketchup</h1>
+    <p>You don’t think about your lawn.</p>
+  </header>
+
+  <section>
+    <h2 style="text-align:center;margin-bottom:32px;color:var(--primary);font-size:1.6rem;font-weight:700;">Features</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>Unbeatable Flavor</h3>
+        <p>Taste the difference with our unique blend of rich, ripe tomatoes and a hint of nostalgic spices.</p>
+      </div>
+      <div class="feature">
+        <h3>All-Natural Recipe</h3>
+        <p>No fillers, no preservatives—just classic ketchup made from real ingredients you recognize.</p>
+      </div>
+      <div class="feature">
+        <h3>Retro-Inspired Packaging</h3>
+        <p>Show off your taste and style with our stylish bottles that look great on any table.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 style="text-align:center;margin-bottom:32px;color:var(--primary);font-size:1.6rem;font-weight:700;">Benefits</h2>
+    <div class="benefits">
+      <div class="benefit">
+        <h3>Brings Back Memories</h3>
+        <p>Every squeeze is a taste of the good old days—your favorite flavor, now and forever.</p>
+      </div>
+      <div class="benefit">
+        <h3>Perfect for Every Meal</h3>
+        <p>Burgers, fries, sandwiches—you name it, Nostalgix makes it better.</p>
+      </div>
+      <div class="benefit">
+        <h3>Made for Sharing</h3>
+        <p>Our bottles are easy to share and pass around, ideal for family dinners and cookouts.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 style="text-align:center;margin-bottom:32px;color:var(--primary);font-size:1.6rem;font-weight:700;">What Our Fans Say</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        I haven’t tasted ketchup like this since I was a kid. Instantly transported to backyard BBQs!
+        <div class="testimonial-footer">– Jamie R.</div>
+      </div>
+      <div class="testimonial">
+        The bottle looks so cool and the flavor is even better. Nostalgix is my new favorite ketchup.
+        <div class="testimonial-footer">– Alex B.</div>
+      </div>
+      <div class="testimonial">
+        Real ingredients, real flavor. My whole family loves Nostalgix!
+        <div class="testimonial-footer">– Morgan T.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 style="text-align:center;margin-bottom:32px;color:var(--primary);font-size:1.6rem;font-weight:700;">Pricing</h2>
+    <div class="pricing">
+      <div class="price-card">
+        <h4>Starter Bottle</h4>
+        <div class="price">$4<span style="font-size:1rem;">.99</span></div>
+        <ul>
+          <li>1 x 16oz Nostalgix Ketchup</li>
+          <li>Classic glass bottle</li>
+        </ul>
+        <button>Order Now</button>
+      </div>
+      <div class="price-card">
+        <h4>Family Pack</h4>
+        <div class="price">$12<span style="font-size:1rem;">.99</span></div>
+        <ul>
+          <li>3 x 16oz Nostalgix Ketchup</li>
+          <li>Ideal for gatherings</li>
+          <li>Free shipping</li>
+        </ul>
+        <button>Order Now</button>
+      </div>
+      <div class="price-card">
+        <h4>Subscribe &amp; Save</h4>
+        <div class="price">$10<span style="font-size:1rem;">/mo</span></div>
+        <ul>
+          <li>Monthly delivery</li>
+          <li>2 x 16oz bottles</li>
+          <li>Exclusive retro gifts</li>
+        </ul>
+        <button>Subscribe</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="contact-section">
+      <h2>Contact Us</h2>
+      <form id="leadform">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2024 Nostalgix. All Rights Reserved.
+  </footer>
+</body>
+</html>
