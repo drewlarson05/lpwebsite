@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lawnlie - Effortless Lawn Perfection</title>
+  <style>
+    :root {
+      --primary: #34a853;
+      --secondary: #f5f7fa;
+      --accent: #20232a;
+      --text: #333;
+      --radius: 12px;
+      --shadow: 0 4px 24px rgba(52, 168, 83, 0.08);
+      --max-width: 1100px;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      color: var(--text);
+      background: var(--secondary);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: #fff;
+      box-shadow: var(--shadow);
+      padding: 32px 0 48px 0;
+      border-bottom-left-radius: var(--radius);
+      border-bottom-right-radius: var(--radius);
+    }
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    nav img {
+      height: 48px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    nav ul li a:hover {
+      color: var(--primary);
+    }
+    .hero {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 64px 0 56px 0;
+      gap: 32px;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      color: var(--accent);
+      font-weight: 800;
+      margin-bottom: 16px;
+      letter-spacing: -1px;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      color: #666;
+      margin-bottom: 20px;
+      max-width: 550px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-btn {
+      background: var(--primary);
+      color: #fff;
+      padding: 16px 36px;
+      border: none;
+      border-radius: var(--radius);
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.18s;
+      box-shadow: 0 2px 12px rgba(52, 168, 83, 0.09);
+      margin-top: 20px;
+      letter-spacing: 0.05em;
+    }
+    .cta-btn:hover {
+      background: #219f45;
+    }
+    section {
+      margin-top: 64px;
+      margin-bottom: 64px;
+      padding: 0 0;
+    }
+    .features, .benefits {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+      margin-top: 32px;
+    }
+    .feature, .benefit {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 32px 28px;
+      min-width: 250px;
+      max-width: 350px;
+      flex: 1 1 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+    }
+    .feature h3, .benefit h3 {
+      font-size: 1.22rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    .testimonials-list {
+      display: flex;
+      gap: 36px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 32px;
+    }
+    .testimonial {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px 24px;
+      max-width: 320px;
+      min-width: 260px;
+      flex: 1 1 260px;
+      display: flex;
+      flex-direction: column;
+    }
+    .testimonial p {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 12px;
+    }
+    .testimonial .author {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 1.08rem;
+    }
+    .pricing-table {
+      display: flex;
+      gap: 28px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+    .plan {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 36px 32px;
+      max-width: 280px;
+      min-width: 225px;
+      flex: 1 1 225px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .plan h4 {
+      font-size: 1.13rem;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .plan .price {
+      color: var(--primary);
+      font-size: 2.1rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .plan ul {
+      list-style: none;
+      margin: 20px 0;
+      padding: 0;
+      color: #555;
+    }
+    .plan ul li {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+    .plan .plan-btn {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 12px 30px;
+      border-radius: var(--radius);
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.18s;
+      margin-top: 18px;
+      box-shadow: 0 2px 8px rgba(52, 168, 83, 0.08);
+    }
+    .plan .plan-btn:hover {
+      background: #237a37;
+    }
+    .contact-section {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      max-width: 540px;
+      margin: 0 auto 64px auto;
+      padding: 40px 32px;
+      text-align: center;
+    }
+    .contact-section h2 {
+      color: var(--primary);
+      font-size: 1.7rem;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+    .contact-section form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .contact-section input, .contact-section textarea {
+      padding: 12px;
+      border-radius: var(--radius);
+      border: 1px solid #cce7d6;
+      font-size: 1rem;
+      outline: none;
+      transition: border 0.2s;
+      background: #f8faf9;
+    }
+    .contact-section input:focus, .contact-section textarea:focus {
+      border: 1.5px solid var(--primary);
+      background: #fff;
+    }
+    .contact-section button[type="submit"] {
+      background: var(--primary);
+      color: #fff;
+      padding: 14px 0;
+      border: none;
+      border-radius: var(--radius);
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background 0.16s;
+    }
+    .contact-section button[type="submit"]:hover {
+      background: #209b42;
+    }
+    footer {
+      padding: 28px 0 22px 0;
+      text-align: center;
+      color: #888;
+      font-size: 0.98rem;
+      background: #f2faf5;
+      border-top-left-radius: var(--radius);
+      border-top-right-radius: var(--radius);
+    }
+    @media (max-width: 900px) {
+      .features, .benefits, .pricing-table, .testimonials-list {
+        flex-direction: column;
+        gap: 18px;
+        align-items: center;
+      }
+      .feature, .benefit, .plan, .testimonial {
+        max-width: 96vw;
+        min-width: 0;
+      }
+    }
+    @media (max-width: 700px) {
+      .container {
+        padding: 0 8px;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      header, section {
+        margin: 0;
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <img src="logo.png" alt="Your Brand">
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#benefits">Benefits</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="hero" id="home">
+        <h1>You don’t think about your lawn.<br>We do.</h1>
+        <p>Lawnlie takes the thought and worry out of lawn care. Our modern landscaping services ensure your grass is always green, neat, and envy-worthy — automatically.<br>Relax into a perfect lawn with zero hassle.</p>
+        <a href="#contact"><button class="cta-btn">Get Started</button></a>
+      </div>
+    </div>
+  </header>
+  
+  <main>
+    <section id="features">
+      <div class="container">
+        <h2 style="font-size:1.6rem; color:var(--primary); font-weight:700; text-align:center;">Features</h2>
+        <div class="features">
+          <div class="feature">
+            <h3>Automated Scheduling</h3>
+            <p>We monitor your lawn and schedule maintenance at the optimal time, so you never need to remember or book a thing.</p>
+          </div>
+          <div class="feature">
+            <h3>Smart Lawn Monitoring</h3>
+            <p>Our tech tracks soil, moisture, and weather, delivering personalized care for every square foot of your yard.</p>
+          </div>
+          <div class="feature">
+            <h3>Trained Local Teams</h3>
+            <p>Friendly professionals arrive right on cue, equipped and trained for a flawless, stress-free service every visit.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="benefits">
+      <div class="container">
+        <h2 style="font-size:1.6rem; color:var(--primary); font-weight:700; text-align:center;">Benefits</h2>
+        <div class="benefits">
+          <div class="benefit">
+            <h3>No More Scheduling Stress</h3>
+            <p>Our system handles everything — just enjoy your perfect lawn without the calendar headaches.</p>
+          </div>
+          <div class="benefit">
+            <h3>Curb Appeal Boost</h3>
+            <p>Enjoy lush, vibrant grass and razor-sharp edges that make your home the neighborhood highlight.</p>
+          </div>
+          <div class="benefit">
+            <h3>More Time for You</h3>
+            <p>Spend weekends relaxing, not mowing or watering — Lawnlie does it all behind the scenes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="testimonials">
+      <div class="container">
+        <h2 style="font-size:1.6rem; color:var(--primary); font-weight:700; text-align:center;">What our customers say</h2>
+        <div class="testimonials-list">
+          <div class="testimonial">
+            <p>"I literally never think about my lawn anymore — it's just perfect, all the time!"</p>
+            <span class="author">— Emily R.</span>
+          </div>
+          <div class="testimonial">
+            <p>"Lawnlie turned my weedy, overgrown yard into a showpiece. Best decision I ever made."</p>
+            <span class="author">— Carlos W.</span>
+          </div>
+          <div class="testimonial">
+            <p>"The set-it-and-forget-it approach saves me so much time. Highly recommend."</p>
+            <span class="author">— Mei L.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="pricing">
+      <div class="container">
+        <h2 style="font-size:1.6rem; color:var(--primary); font-weight:700; text-align:center;">Simple, Transparent Pricing</h2>
+        <div class="pricing-table">
+          <div class="plan">
+            <h4>Starter</h4>
+            <div class="price">$39<span style="font-size:1rem; font-weight:400;">/mo</span></div>
+            <ul>
+              <li>Bi-weekly mowing</li>
+              <li>Basic lawn monitoring</li>
+              <li>Online support</li>
+            </ul>
+            <button class="plan-btn">Select</button>
+          </div>
+          <div class="plan" style="border:2px solid var(--primary);box-shadow:0 4px 28px rgba(52,168,83,0.14);">
+            <h4>Premium</h4>
+            <div class="price">$69<span style="font-size:1rem; font-weight:400;">/mo</span></div>
+            <ul>
+              <li>Weekly mowing &amp; edging</li>
+              <li>Smart watering &amp; monitoring</li>
+              <li>Priority customer support</li>
+            </ul>
+            <button class="plan-btn">Select</button>
+          </div>
+          <div class="plan">
+            <h4>Elite</h4>
+            <div class="price">$119<span style="font-size:1rem; font-weight:400;">/mo</span></div>
+            <ul>
+              <li>All Premium features</li>
+              <li>Custom fertilization</li>
+              <li>Seasonal aeration &amp; upgrades</li>
+            </ul>
+            <button class="plan-btn">Select</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="container">
+        <div class="contact-section">
+          <h2>Contact Lawnlie</h2>
+          <p style="color:#666; margin-bottom:18px;">Ready for a lawn you never need to think about? Let us help — just fill out this quick form and we'll be in touch soon!</p>
+          <form id="leadform">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="tel" name="phone" placeholder="Phone (optional)">
+            <textarea name="message" placeholder="Tell us about your lawn or ask a question..." rows="4"></textarea>
+            <button type="submit">Send My Request</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    &copy; 2024 Lawnlie. Effortless Lawn Perfection.
+  </footer>
+</body>
+</html>
