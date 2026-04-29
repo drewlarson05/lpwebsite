@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lawnlie | Effortless Landscaping</title>
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #33a76b;
+      --secondary: #eaefea;
+      --accent: #e1fff3;
+      --text: #173e2a;
+      --white: #fff;
+      --gray: #f2f2f2;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header, section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 64px 24px;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background: linear-gradient(100deg, var(--accent) 50%, var(--secondary) 100%);
+      padding-top: 96px;
+      padding-bottom: 96px;
+    }
+    .logo {
+      width: 80px;
+      margin-bottom: 28px;
+    }
+    .hero-title {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      color: var(--primary);
+      line-height: 1.1;
+      text-align: center;
+    }
+    .hero-desc {
+      font-size: 1.3rem;
+      max-width: 460px;
+      text-align: center;
+      margin-bottom: 34px;
+      color: #334;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: var(--primary);
+      color: var(--white);
+      padding: 18px 44px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 100px;
+      transition: background .2s;
+      text-decoration: none;
+      margin-top: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 18px rgba(51, 167, 107, 0.08);
+    }
+    .cta-btn:hover {
+      background: #28915a;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2.1rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      letter-spacing: 0.02em;
+      color: var(--primary);
+    }
+    /* Features */
+    .features-list {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 38px;
+    }
+    .feature {
+      background: var(--gray);
+      border-radius: 18px;
+      flex: 1 1 220px;
+      min-width: 220px;
+      max-width: 330px;
+      padding: 30px 23px;
+      box-shadow: 0 2px 12px rgba(51,167,107,0.07);
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .feature-icon {
+      font-size: 2.2rem;
+      color: var(--primary);
+      margin-bottom: 16px;
+      display: block;
+    }
+    .feature-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    /* Benefits */
+    .benefits-list {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    .benefit {
+      background: var(--secondary);
+      border-radius: 16px;
+      flex: 1 1 220px;
+      min-width: 220px;
+      max-width: 330px;
+      padding: 28px 22px;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .benefit-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 7px;
+    }
+    /* Testimonials */
+    .testimonials-list {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 36px;
+    }
+    .testimonial {
+      background: var(--gray);
+      border-radius: 14px;
+      flex: 1 1 260px;
+      min-width: 220px;
+      max-width: 340px;
+      padding: 28px 24px;
+      box-shadow: 0 1px 8px rgba(51,167,107,0.06);
+      position: relative;
+      margin-bottom: 12px;
+    }
+    .testimonial-text {
+      font-size: 1.06rem;
+      color: #334;
+      margin-bottom: 15px;
+      font-style: italic;
+    }
+    .testimonial-author {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 1rem;
+    }
+    /* Pricing */
+    .pricing-table {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+    .price-card {
+      background: var(--secondary);
+      border-radius: 16px;
+      box-shadow: 0 2px 18px rgba(51,167,107,0.08);
+      padding: 34px 28px;
+      text-align: center;
+      flex: 1 1 260px;
+      min-width: 220px;
+      max-width: 320px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .price-title {
+      font-size: 1.17rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--primary);
+    }
+    .price-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #152e24;
+      margin-bottom: 7px;
+    }
+    .price-desc {
+      font-size: 1rem;
+      color: #394;
+      margin-bottom: 21px;
+    }
+    .price-btn {
+      background: var(--primary);
+      color: var(--white);
+      border: none;
+      border-radius: 100px;
+      padding: 11px 36px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background .2s;
+    }
+    .price-btn:hover {
+      background: #28915a;
+    }
+    /* Contact */
+    .contact-form-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: var(--accent);
+      border-radius: 20px;
+      padding: 44px 24px;
+      box-shadow: 0 2px 18px rgba(51, 167, 107, 0.05);
+      max-width: 480px;
+      margin: 34px auto 0 auto;
+    }
+    form#leadform {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+    }
+    label {
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+    input, textarea {
+      padding: 13px 10px;
+      border-radius: 8px;
+      border: 1px solid #c3e3d2;
+      font-size: 1rem;
+      width: 100%;
+      background: var(--white);
+      margin-bottom: 2px;
+      resize: vertical;
+      min-height: 20px;
+      transition: border .2s;
+    }
+    input:focus, textarea:focus {
+      border-color: var(--primary);
+      outline: none;
+    }
+    button[type="submit"] {
+      align-self: flex-end;
+      background: var(--primary);
+      color: var(--white);
+      border: none;
+      border-radius: 100px;
+      padding: 14px 38px;
+      font-size: 1.07rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 12px;
+      transition: background .2s;
+    }
+    button[type="submit"]:hover {
+      background: #259157;
+    }
+    /* Responsive */
+    @media (max-width: 800px) {
+      .features-list, .benefits-list, .testimonials-list, .pricing-table {
+        flex-direction: column;
+        gap: 18px;
+      }
+      header, section {
+        padding: 42px 8vw;
+      }
+      .section-title {
+        font-size: 1.6rem;
+      }
+      .hero-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero -->
+  <header>
+    <img src="logo.png" alt="Your Brand" class="logo">
+    <h1 class="hero-title">You don’t think about your lawn.<br/>We make sure you never have to.</h1>
+    <p class="hero-desc">Lawnlie is the modern landscaping service that cares for your yard so you can focus on life. Effortless upkeep. Reliable results. Surprisingly simple.</p>
+    <a href="#leadform" class="cta-btn">Get Started</a>
+  </header>
+
+  <!-- Features Section -->
+  <section id="features">
+    <h2 class="section-title">Features</h2>
+    <div class="features-list">
+      <div class="feature">
+        <span class="feature-icon">🌿</span>
+        <div class="feature-title">Automatic Scheduling</div>
+        <div>No more remembering appointments—your service is timed perfectly every time.</div>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">📱</span>
+        <div class="feature-title">Easy Online Management</div>
+        <div>Book, reschedule, or adjust from any device with a couple taps.</div>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">✅</span>
+        <div class="feature-title">Trusted Professionals</div>
+        <div>Vetted and friendly pros care for your yard as if it’s their own.</div>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">♻️</span>
+        <div class="feature-title">Eco-Friendly Options</div>
+        <div>Choose sustainable treatments and mowing for a greener lawn and planet.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section id="benefits">
+    <h2 class="section-title">Benefits</h2>
+    <div class="benefits-list">
+      <div class="benefit">
+        <div class="benefit-title">Save Time</div>
+        <div>Enjoy your weekends and free time. Leave the yard work to us.</div>
+      </div>
+      <div class="benefit">
+        <div class="benefit-title">Peace of Mind</div>
+        <div>Your lawn is handled by experts—so you can stop worrying about it.</div>
+      </div>
+      <div class="benefit">
+        <div class="benefit-title">Consistent Quality</div>
+        <div>Professional care means lush, healthy turf week after week.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials">
+    <h2 class="section-title">What Our Customers Say</h2>
+    <div class="testimonials-list">
+      <div class="testimonial">
+        <div class="testimonial-text">“I never thought about my lawn—now it looks incredible every month. Lawnlie just works.”</div>
+        <div class="testimonial-author">— Jamie T.</div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-text">“Setup was easy, service is dependable, and the team is super friendly. Total peace of mind!”</div>
+        <div class="testimonial-author">— Priya N.</div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-text">“Eco-friendly options made Lawnlie perfect for our family. The grass really is greener!”</div>
+        <div class="testimonial-author">— Carlos D.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing">
+    <h2 class="section-title">Simple Pricing</h2>
+    <div class="pricing-table">
+      <div class="price-card">
+        <div class="price-title">Starter</div>
+        <div class="price-value">$39/mo</div>
+        <div class="price-desc">Lawn mowing & trimming, monthly schedule</div>
+        <a href="#leadform" class="price-btn">Choose Starter</a>
+      </div>
+      <div class="price-card">
+        <div class="price-title">Pro</div>
+        <div class="price-value">$59/mo</div>
+        <div class="price-desc">Mowing, trimming & fertilization, bi-weekly</div>
+        <a href="#leadform" class="price-btn">Choose Pro</a>
+      </div>
+      <div class="price-card">
+        <div class="price-title">Premium</div>
+        <div class="price-value">$89/mo</div>
+        <div class="price-desc">Full care: mowing, treatments, garden & eco options</div>
+        <a href="#leadform" class="price-btn">Choose Premium</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2 class="section-title">Get Your Custom Quote</h2>
+    <div class="contact-form-wrap">
+      <form id="leadform" autocomplete="off">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input name="name" id="name" type="text" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input name="email" id="email" type="email" required>
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input name="address" id="address" type="text">
+        </div>
+        <div class="form-group">
+          <label for="message">How can we help?</label>
+          <textarea name="message" id="message" rows="3"></textarea>
+        </div>
+        <button type="submit">Request Quote</button>
+      </form>
+    </div>
+  </section>
+</body>
+</html>
